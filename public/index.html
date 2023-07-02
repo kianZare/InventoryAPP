@@ -58,7 +58,7 @@
               >
                 Cancel
               </button>
-              <button
+              <button id="add-new-category"
                 class="flex-1 bg-slate-500 text-slate-200 rounded-xl py-2"
               >
                 Add new category
@@ -96,24 +96,15 @@
             />
           </div>
           <div>
-            <label for="category-description" class="block mb-1 text-slate-400"
+            <label for="product-category" class="block mb-1 text-slate-400"
               >Category</label
             >
             <select
               type="select"
-              name="category-description"
-              id="category-description"
+              name="product-category"
+              id="product-category"
               class="bg-transparent rounded-xl border border-slate-500 text-slate-400 w-full"
             >
-              <option class="bg-slate-500 text-slate-300" value="">
-                select a category
-              </option>
-              <option class="bg-slate-500 text-slate-300" value="backend">
-                backend
-              </option>
-              <option class="bg-slate-500 text-slate-300" value="frontend">
-                frontend
-              </option>
             </select>
           </div>
           <div class="flex items-center justify-center gap-x-4">
@@ -148,5 +139,6 @@
       </div>
     </div>
   </div>
+  <script src="/src/js/app.js" type="module"></script>
   </body>
 </html>
