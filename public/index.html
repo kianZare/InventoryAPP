@@ -123,6 +123,14 @@
           <label for="search-input" class="text-slate-400 text-xl">Search</label>
           <input type="text" name="search-input" id="search-input" class="bg-transparent rounded-xl border border-slate-400 text-slate-400 ">
         </div>
+        <div class="flex items-center justify-between mb-6">
+          <label for="sort-products" class="text-slate-400 text-xl">Sort</label>
+          <select name="sort-products" id="sort-products" class="bg-transparent text-slate-400 rounded-xl">
+            <option class="bg-slate-500 text-slate-300" value="">Select a category</option>
+            <option class="bg-slate-500 text-slate-300" selected value="newest">Newest</option>
+            <option class="bg-slate-500 text-slate-300" value="oldest">Oldest</option>
+          </select>
+        </div>
         <div id="product-list"></div>
       </div>
     </div>
