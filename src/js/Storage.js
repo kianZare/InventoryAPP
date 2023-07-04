@@ -21,7 +21,6 @@ export default class Storage {
   // getAllCategoreies
 
   static getAllCategoreies() {
-    // products , category => locatStorage
     const savedCategories = JSON.parse(localStorage.getItem("category")) || [];
     // desending sort
     const sortedCategories = savedCategories.sort((a, b) => {
@@ -40,7 +39,7 @@ export default class Storage {
       existedItem.description = categoryToSave.description;
     } else {
       // new
-      categoryToSave.id = new Date();
+      categoryToSave.id = new Date().getTime();
       categoryToSave.createdAt = new Date().toISOString();
       savedCategories.push(categoryToSave);
     }
@@ -48,15 +47,15 @@ export default class Storage {
   }
   static getAllProducts() {
     const savedProducts = JSON.parse(localStorage.getItem("products")) || [];
-    return sortedCategories = savedCategories.sort((a, b) => {
+    return savedProducts.sort((a, b) => {
       return new Date(a.category) > new Date(b.createdAt) ? -1 : 1;
     });
   }
   static saveProducts(productToSave) {
-    const savedProduct = Storage.getAllCategoreies();
+    const savedProducts = Storage.getAllProducts();
     // edit => ... save
     // new => ... save
-    const existedItem = this.saveProducts.find((c) => c.id === productToSave.id);
+    const existedItem = savedProducts.find((c) => c.id === productToSave.id);
     if (existedItem) {
       // edit
       existedItem.title = productToSave.title;
@@ -64,9 +63,9 @@ export default class Storage {
       existedItem.category = productToSave.category;
     } else {
       // new
-      productToSave.id = new Date().getItem();
+      productToSave.id = new Date().getTime();
       productToSave.createdAt = new Date().toISOString();
-      savedCategories.push(productToSave);
+      savedProducts.push(productToSave);
     }
     localStorage.setItem("products", JSON.stringify(savedProducts));
   }
