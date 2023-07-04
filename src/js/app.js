@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // console.log(ProductView);
   // create categories options
   CategoryView.createCategoriesList();
-  ProductView.createProductList();
+  ProductView.createProductList(ProductView.products);
 });
 
 // target:
