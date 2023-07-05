@@ -836,3 +836,20 @@ select {
   padding-right: 0.5rem;
 
 }
+.font-medium {
+  font-weight: 500;
+}
+.text-slate-600 {
+  --tw-text-opacity: 1;
+  color: rgb(71 85 105 / var(--tw-text-opacity));
+}
+.text-lg {
+  font-size: 1.125rem/* 18px */;
+  line-height: 1.75rem/* 28px */;
+}
+.mb-4 {
+  margin-bottom: 1rem/* 16px */;
+}
+.hidden {
+  display: none;
+}
