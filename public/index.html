@@ -10,7 +10,7 @@
     <div class="bg-slate-800 min-h-screen w-screen">
       <!-- appBar -->
       <div
-        class="h-12 flex items-center justify-center gap-x-4 bg-slate-200 mb-6"
+        class="h-12 flex items-center justify-center gap-x-4 bg-slate-500 mb-6"
       >
         <h1 class="text-xl font-bold text-slate-300">
           Inventory App using tailwind & JS
@@ -25,7 +25,7 @@
         <!-- category form -->
         <section>
           <div class="mb-6 hidden" id="category-wrapper">
-            <h2 class="text-xl text-slate-300 font-bold mb-2">
+            <h2 class="text-xl text-slate-300 font-bold mb-2 ml-2">
               Add New category
             </h2>
             <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
@@ -68,12 +68,12 @@
               </div>
             </form>
           </div>
-          <button id="toggle-add-category" class="text-slate-600 text-xl mb-4 font-medium">Add new category?</button>
+          <button id="toggle-add-category" class="text-slate-600 text-xl mb-4 font-medium ml-2">Add new category?</button>
   
         </section>
         <!-- products form -->
         <div class="mb-6">
-          <h2 class="text-xl text-slate-300 font-bold mb-2">Add New Product</h2>
+          <h2 class="text-xl text-slate-300 font-bold mb-2 ml-2">Add New Product</h2>
           <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
             <div>
               <label for="product-title" class="block mb-1 text-slate-400"
@@ -121,14 +121,14 @@
         </div>
 
         <!-- product list -->
-        <h2 class="text-xl text-slate-300 font-bold mb-2">Product List</h2>
+        <h2 class="text-xl text-slate-300 font-bold mb-2 ml-2">Product List</h2>
         <div class="flex items-center justify-between mb-6">
-          <label for="search-input" class="text-slate-400 text-xl">Search</label>
-          <input type="text" name="search-input" id="search-input" class="bg-transparent rounded-xl border border-slate-400 text-slate-400 ">
+          <label for="search-input" class="text-slate-400 text-xl ml-2">Search</label>
+          <input type="text" name="search-input" id="search-input" class="bg-transparent rounded-xl border border-slate-400 text-slate-400 mr-2">
         </div>
         <div class="flex items-center justify-between mb-6">
-          <label for="sort-products" class="text-slate-400 text-xl">Sort</label>
-          <select name="sort-products" id="sort-products" class="bg-transparent text-slate-400 rounded-xl">
+          <label for="sort-products" class="text-slate-400 text-xl ml-2">Sort</label>
+          <select name="sort-products" id="sort-products" class="bg-transparent text-slate-400 rounded-xl mr-2">
             <option class="bg-slate-500 text-slate-300" value="">Select a category</option>
             <option class="bg-slate-500 text-slate-300" selected value="newest">Newest</option>
             <option class="bg-slate-500 text-slate-300" value="oldest">Oldest</option>
@@ -136,6 +136,7 @@
         </div>
         <div id="product-list"></div>
       </div>
+      <div class="h-20"></div>
     </div>
     <script src="/src/js/app.js" type="module"></script>
   </body>

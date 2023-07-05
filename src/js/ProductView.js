@@ -3,12 +3,14 @@ import Storage from "./Storage.js";
 const addNewProductBtn = document.querySelector("#add-new-product");
 const searchInput = document.querySelector("#search-input");
 const selectedSort = document.querySelector("#sort-products");
+// const deleteProduct = document.getElementById("delete-product")
 
 class ProductView {
   constructor() {
     addNewProductBtn.addEventListener("click", (e) => this.addNewProduct(e));
     searchInput.addEventListener("input", (e) => this.searchProducts(e));
     selectedSort.addEventListener("change", (e) => this.sortProducts(e));
+    // deleteProduct.addEventListener("click", (e) => this.deleteProduct(e))
     this.products = [];
   }
   setApp() {
@@ -38,8 +40,8 @@ class ProductView {
         month: "long",
         day: "numeric",
       };
-      result += `<div class="flex items-center justify-between ">
-        <span class="text-slate-400">${item.title}</span>
+      result += `<div class="flex items-center justify-between mb-2">
+        <span class="text-slate-400 ml-2">${item.title}</span>
         <div class="flex items-center gap-x-4">
           <span class="text-slate-400">${new Date().toLocaleDateString(
             "en-UK",
@@ -54,15 +56,18 @@ class ProductView {
             >${item.quantity}</span
           >
           <button
-            class="border px-2 py-0.5 rounded-xl border-red-500 text-red-400" data-id=${
-              item.id
-            }
-          >delete</button>
+            class="delete-product border px-2 py-0.5 rounded-xl border-red-500 text-red-400 mr-2" 
+            data-product-id=${item.id}>delete</button>
         </div>
       </div>`;
     });
     const productsDOM = document.getElementById("product-list");
     productsDOM.innerHTML = result;
+
+    const deleteBtns = [...document.querySelectorAll(".delete-product")];
+    deleteBtns.forEach((item) => {
+      item.addEventListener("click", (e) => this.deleteProduct(e));
+    });
   }
   searchProducts(e) {
     const value = e.target.value.trim().toLowerCase();
@@ -75,6 +80,12 @@ class ProductView {
     const value = e.target.value;
     this.products = Storage.getAllProducts(value);
     this.createProductList(this.products);
+  }
+  deleteProduct(e) {
+    const productId = e.target.dataset.productId;
+    Storage.deleteProduct(productId);
+    this.products = Storage.getAllProducts();
+    this.createProductList(this.products)
   }
 }
 
